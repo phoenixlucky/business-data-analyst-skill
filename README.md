@@ -1,0 +1,30 @@
+# Business Data Analyst Skill
+
+版本：`1.0.0`
+
+## 简介
+
+这是一个面向商业分析、经营诊断和指标拆解场景的技能包。
+
+它适合用于：
+
+- 将业务问题翻译成分析方案
+- 统一指标口径与分析范围
+- 检查数据质量与口径漂移
+- 拆解增长、转化、留存、收入和效率问题
+- 输出可执行的业务建议与验证指标
+
+## 目录结构
+
+- [SKILL.md](/d:/home/business-data-analyst-skill/SKILL.md)
+- [references/examples.md](/d:/home/business-data-analyst-skill/references/examples.md)
+- [references/metric-playbook.md](/d:/home/business-data-analyst-skill/references/metric-playbook.md)
+- [agents/openai.yaml](/d:/home/business-data-analyst-skill/agents/openai.yaml)
+
+## 使用说明
+
+优先阅读 [SKILL.md](/d:/home/business-data-analyst-skill/SKILL.md)，它定义了该技能的工作原则、固定分析顺序、输出结构和参考材料。
+
+当需要快速补充分析案例时，查看 [references/examples.md](/d:/home/business-data-analyst-skill/references/examples.md)。
+
+当需要统一常见业务指标口径和拆解方法时，查看 [references/metric-playbook.md](/d:/home/business-data-analyst-skill/references/metric-playbook.md)。
