@@ -1,0 +1,27 @@
+{
+  "name": "business-data-analyst-skill",
+  "version": "1.0.0",
+  "description": "Business data analysis and operating diagnosis skill. Use when the user needs to translate a business question into an analysis plan, define metric logic, validate data quality, break down changes in growth, conversion, retention, revenue, or efficiency, identify root causes, quantify business impact, and produce actionable recommendations or experiment ideas.",
+  "author": "phoenixlucky",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phoenixlucky/business-data-analyst-skill.git"
+  },
+  "keywords": [
+    "business analysis",
+    "data analyst",
+    "operating diagnosis",
+    "metric",
+    "growth analysis",
+    "conversion funnel",
+    "retention",
+    "revenue analysis",
+    "KPIs",
+    "business intelligence",
+    "SQL",
+    "data quality",
+    "bilingual",
+    "skill"
+  ]
+}
