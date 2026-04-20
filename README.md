@@ -1,6 +1,6 @@
 # Business Data Analyst Skill
 
-版本：`1.1.0`
+版本：`1.2.0`
 
 ## 简介
 
