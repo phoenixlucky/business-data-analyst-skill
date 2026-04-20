@@ -1,5 +1,6 @@
 ---
 name: business-data-analyst-skill
+version: 1.2.0
 description: Business data analysis and operating diagnosis skill. Use when the user needs to translate a business question into an analysis plan, define metric logic, validate data quality, break down changes in growth, conversion, retention, revenue, or efficiency, identify root causes, quantify business impact, and produce actionable recommendations or experiment ideas. Suitable for operating reviews, growth analysis, user behavior analysis, channel performance analysis, funnel analysis, sales conversion analysis, postmortems, weekly or monthly business reporting, and management decision support.
 ---
 
