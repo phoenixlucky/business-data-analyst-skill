@@ -1,6 +1,6 @@
 # Business Data Analyst Skill
 
-版本：`1.0.0`
+版本：`1.1.0`
 
 ## 简介
 
@@ -17,9 +17,20 @@
 ## 目录结构
 
 - [SKILL.md](/d:/home/business-data-analyst-skill/SKILL.md)
+- [CHANGELOG.md](/d:/home/business-data-analyst-skill/CHANGELOG.md)
 - [references/examples.md](/d:/home/business-data-analyst-skill/references/examples.md)
 - [references/metric-playbook.md](/d:/home/business-data-analyst-skill/references/metric-playbook.md)
+- [references/router-design.md](/d:/home/business-data-analyst-skill/references/router-design.md)
 - [agents/openai.yaml](/d:/home/business-data-analyst-skill/agents/openai.yaml)
+
+## 当前状态
+
+当前仓库以文档型 skill 包为主，主要包含提示词规范、分析框架和参考材料。
+
+仓库现已补充最小可用的技能内部意图路由。实现说明和变更记录分别见：
+
+- [references/router-design.md](/d:/home/business-data-analyst-skill/references/router-design.md)
+- [CHANGELOG.md](/d:/home/business-data-analyst-skill/CHANGELOG.md)
 
 ## 使用说明
 
@@ -28,3 +39,9 @@
 当需要快速补充分析案例时，查看 [references/examples.md](/d:/home/business-data-analyst-skill/references/examples.md)。
 
 当需要统一常见业务指标口径和拆解方法时，查看 [references/metric-playbook.md](/d:/home/business-data-analyst-skill/references/metric-playbook.md)。
+
+如果准备把 skill 接入运行时路由层，先看 [references/router-design.md](/d:/home/business-data-analyst-skill/references/router-design.md)。
+
+## 更新说明
+
+项目变更历史统一记录在 [CHANGELOG.md](/d:/home/business-data-analyst-skill/CHANGELOG.md)。
