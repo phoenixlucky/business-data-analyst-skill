@@ -102,6 +102,39 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 - 资源利用率
 - 异常损耗
 
+### 6. 市场调研
+
+适用于行业进入、赛道评估、竞品对标、客户洞察、市场规模估算。
+
+调研前先明确：
+- 决策问题：调研结果用于支持什么决策
+- 关键假设：需要验证哪些隐含假设
+- 输出形式：报告、市场地图还是打分卡
+
+优先路径：
+- 市场规模 -> 二手数据 + 行业报告 + 交叉验证
+- 竞品对标 -> 公开信息 + 产品体验 + 用户评价
+- 客户洞察 -> 访谈 + 问卷 + 社交媒体挖掘
+- 行业趋势 -> 政策 + 技术 + 资本 + 社会变化
+
+搜索纪律：
+- 每次搜索前明确目标，不要漫无目的浏览
+- 优先使用含发布时间、统计口径、数据来源的信息
+- 单一来源数据标注为 `单来源`，不做核心判断依据
+- 不同来源数据差异超过 30%，认定为 `口径不一致`，注明分歧
+- 无日期、无来源、超过 18 个月的信息不采纳
+- 调研结束后必须综合提炼，不把搜索结果直接堆入输出
+
+### 7. 搜索工具使用纪律
+
+当需要外部信息支持分析时（如行业数据、竞品信息、用户反馈），应：
+
+1. **判断是否必要**：只有当前分析缺少关键外部事实时才启动搜索，不要每个问题都搜
+2. **关键词结构化**：从问题提取 3-5 组关键词，中英文各一组，每组包含核心概念 + 限定词
+3. **来源分级**：一级（官方/财报/招股书）> 二级（知名咨询/券商）> 三级（行业媒体）> 四级（自媒体/社区）
+4. **多轮收敛**：第一轮宽泛了解，第二轮定向补充，第三轮交叉验证
+5. **结果提炼**：搜索后整理成结构化发现，标注来源和置信度
+
 ## 强化分析模型
 
 当用户的问题不只是“指标为什么变了”，而是“公司该不该做、该怎么打、该怎么卖、该怎么管、值不值得投”时，优先补以下模型。
@@ -192,6 +225,9 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 - “产品怎么卖、卖给谁” -> 营销分析模型
 - “怎么提升执行效率或转化” -> 运营分析模型
 - “项目值不值、钱怎么回” -> 财务分析模型
+- “这个市场怎么样、能不能进” -> 市场调研 + 战略分析模型
+- “竞争对手在做什么、我们怎么打” -> 市场调研 + 竞争分析模型
+- “目标客户是谁、想要什么” -> 市场调研 + 营销分析模型
 
 如果问题跨多个层级，先定主模型，再用 1 到 2 个辅助模型补充，不要把所有模型堆在一起。
 
@@ -214,11 +250,12 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 
 ## 路由与参考材料使用
 
-- 如果宿主支持内部路由层，可使用 `src/router.js` 先判断是否属于增长、漏斗、留存、收入利润、效率或经营诊断场景。
+- 如果宿主支持内部路由层，可使用 `src/router.js` 先判断是否属于增长、漏斗、留存、收入利润、效率、市场调研或经营诊断场景。
 - 需要理解路由输入输出契约、命中逻辑和提示语拼装方式时，读取 [references/router-design.md](references/router-design.md)。
 - 需要场景化问题清单和分析示例时，读 [references/examples.md](references/examples.md)。
 - 需要常见指标口径、拆解方法、建议动作模板时，读 [references/metric-playbook.md](references/metric-playbook.md)。
-- 若用户问题偏战略/竞争/营销/财务判断，优先从 `SKILL.md` 保持主线，再按需读取 `metric-playbook.md` 中对应章节，不要一次把所有参考材料都塞进上下文。
+- 需要市场调研方法、搜索工具规范、市场规模估算或竞品调研框架时，读 [references/market-research.md](references/market-research.md)。
+- 若用户问题偏战略/竞争/营销/财务/市场判断，优先从 `SKILL.md` 保持主线，再按需读取 `metric-playbook.md` 或 `market-research.md` 中对应章节，不要一次把所有参考材料都塞进上下文。
 
 ## 输出要求
 
@@ -237,6 +274,17 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 
 9. **模型分析**
 10. **战略 / 竞争 / 营销 / 运营 / 财务判断**
+
+当用户问题属于市场调研场景时，按以下结构回答：
+
+1. **调研问题与决策场景**
+2. **关键假设**
+3. **信息来源与可信度评估**
+4. **市场规模与趋势**（如适用）
+5. **竞争格局**（如适用）
+6. **客户与需求洞察**（如适用）
+7. **关键发现与结论**
+8. **信息缺口与后续调研建议**
 
 其中：
 - `关键发现` 只写观察到的事实，不提前混入建议。
@@ -265,3 +313,4 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 
 - 需要场景化问题清单和分析示例时，读 [references/examples.md](references/examples.md)
 - 需要常见指标与拆解思路时，读 [references/metric-playbook.md](references/metric-playbook.md)
+- 需要市场调研方法与搜索工具规范时，读 [references/market-research.md](references/market-research.md)

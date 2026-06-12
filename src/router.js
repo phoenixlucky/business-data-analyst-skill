@@ -91,6 +91,34 @@ const INTENT_RULES = [
       "经营分析",
     ],
   },
+  {
+    intent: "market_research",
+    label: "市场调研",
+    keywords: [
+      "市场调研",
+      "市场研究",
+      "市场规模",
+      "行业分析",
+      "行业报告",
+      "竞品分析",
+      "竞争对手",
+      "竞争格局",
+      "市场机会",
+      "市场趋势",
+      "客户调研",
+      "用户调研",
+      "目标市场",
+      "市场进入",
+      "赛道分析",
+      "tam",
+      "sam",
+      "som",
+      "份额",
+      "市场渗透",
+      "出海调研",
+      "市场准入",
+    ],
+  },
 ];
 
 const BUSINESS_SIGNALS = [
@@ -118,6 +146,19 @@ const BUSINESS_SIGNALS = [
   "销售",
   "新增",
   "活跃",
+  "市场调研",
+  "市场规模",
+  "行业分析",
+  "竞品分析",
+  "竞争对手",
+  "竞争格局",
+  "市场机会",
+  "tam",
+  "sam",
+  "som",
+  "行业报告",
+  "市场趋势",
+  "赛道分析",
 ];
 
 const DIAGNOSIS_SIGNALS = [
@@ -249,6 +290,7 @@ function buildPromptHint(intent) {
     revenue_analysis: "优先拆量、价、折扣、结构和毛利影响。",
     efficiency_analysis: "优先看单位产出、单位成本、周期和资源利用率。",
     business_diagnosis: "优先界定问题、统一口径、拆原因并给动作建议。",
+    market_research: "优先明确决策问题、设计调研策略、使用搜索工具收集外部信息、交叉验证并输出结构化调研结论。",
   };
 
   return hints[intent] || hints.business_diagnosis;
