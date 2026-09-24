@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.0] - 2026-09-24
+
+### Added
+
+- Added a modern, clearly attributed “Wei Liaozi” business analysis framework connecting decision definition, constraints, market comparison, segmentation, readiness, decision gates, execution, and validation.
+- Added variance bridge/PVM, unit economics and contribution margin, scenario and sensitivity, and Pareto/concentration guidance.
+- Expanded market research and business reporting guidance for source traceability, contextual freshness, decision implications, and evidence-based qualitative prioritization.
+
+### Changed
+
+- Clarified output selection, model routing, and research stopping criteria; removed universal source-age and mismatch thresholds.
+- Bumped the project version to `1.6.0` across `README.md`, `SKILL.md`, and `package.json`.
+
 ## [1.5.0] - 2026-09-24
 
 ### Added

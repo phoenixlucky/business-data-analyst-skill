@@ -1,7 +1,7 @@
 {
   "name": "business-data-analyst-skill",
-  "version": "1.5.0",
-  "description": "Business data analysis and operating diagnosis skill with reporting guidance, internal intent routing, market research capability, and reusable analysis frameworks.",
+  "version": "1.6.0",
+  "description": "Business analysis skill with evidence-based reporting, market research, reusable models, and an end-to-end decision framework.",
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
@@ -103,6 +103,16 @@
     "竞品分析",
     "market sizing",
     "市场规模",
+    "business reporting",
+    "商业报告",
+    "unit economics",
+    "单位经济",
+    "scenario analysis",
+    "情景分析",
+    "variance analysis",
+    "差异分析",
+    "wei liaozi",
+    "尉缭子",
     "skill"
   ]
 }
