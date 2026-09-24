@@ -1,75 +1,114 @@
+<div align="center">
+
 # 商业数据分析师
 
-面向增长、转化、留存、收入与经营决策场景的分析方法和轻量意图路由工具。
+**把业务问题转成可靠分析、清晰决策与可验证行动。**
 
-本项目帮助分析者把业务问题整理成可执行的分析路径：先定义问题与指标口径，再检查数据质量、拆解变化原因，最后提出建议和验证指标。项目提供方法框架、参考资料与关键词路由；实际分析所需的数据和工具由运行环境提供。
+面向增长、转化、留存、收入、运营与市场研究的分析方法、参考资料和轻量意图路由工具。
 
-## 能力概览
+[![Version](https://img.shields.io/github/package-json/v/phoenixlucky/business-data-analyst-skill?style=flat-square&label=version)](https://github.com/phoenixlucky/business-data-analyst-skill/blob/main/package.json)
+[![Stars](https://img.shields.io/github/stars/phoenixlucky/business-data-analyst-skill?style=flat-square&label=stars)](https://github.com/phoenixlucky/business-data-analyst-skill/stargazers)
+[![Forks](https://img.shields.io/github/forks/phoenixlucky/business-data-analyst-skill?style=flat-square&label=forks)](https://github.com/phoenixlucky/business-data-analyst-skill/forks)
+[![Issues](https://img.shields.io/github/issues/phoenixlucky/business-data-analyst-skill?style=flat-square&label=issues)](https://github.com/phoenixlucky/business-data-analyst-skill/issues)
+[![Last commit](https://img.shields.io/github/last-commit/phoenixlucky/business-data-analyst-skill?style=flat-square&label=updated)](https://github.com/phoenixlucky/business-data-analyst-skill/commits/main)
+![Node.js 18+](https://img.shields.io/badge/Node.js-%E2%89%A518-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 
-- **结构化分析**：统一问题范围和指标定义，识别数据质量风险，拆解核心业务驱动因素。
-- **场景路由**：识别增长、漏斗、留存、收入利润、运营效率、经营诊断和市场调研等请求。
-- **专题参考**：提供指标拆解、分析案例、商业报告、市场研究及路由实现说明。
-- **行动建议**：将诊断结果连接到建议、优先级和验证指标，帮助形成可跟踪的后续动作。
-- **端到端决策框架**：提供“制、称、权、分、备、胜、行、验”现代转译，串联问题定义、资源配置、执行与效果验证。
-- **常用分析模型**：涵盖差异桥接、单位经济、情景与敏感性、帕累托与集中度分析，并说明适用边界。
+[快速开始](#快速开始) · [分析能力](#分析能力) · [意图路由](#意图路由) · [项目结构](#项目结构) · [边界说明](#边界说明)
+
+</div>
+
+---
+
+## 项目简介
+
+本项目帮助分析者沿着一条清晰的经营分析主线工作：**定义问题与指标口径 → 检查数据质量 → 拆解业务驱动 → 评估影响 → 形成行动 → 验证效果**。
+
+仓库包含可供 AI 宿主使用的分析技能说明、模型手册、报告与市场研究指南，以及一个不依赖外部库的 Node.js 关键词路由器。它提供分析方法和问题路由，不连接业务数据源，也不代替分析者核验数据与结论。
 
 ## 快速开始
 
-### 在宿主环境中使用
+### 将分析技能用于宿主环境
 
-阅读 [SKILL.md](SKILL.md)，并根据需要参考 `references/` 中的专题材料。宿主需要按自身能力提供业务数据、计算环境或外部搜索工具。
+从 [SKILL.md](SKILL.md) 开始。根据任务再读取 `references/` 中对应专题，避免一次加载全部材料。分析所需的数据、计算能力及网页搜索由宿主环境提供。
 
 ### 在 Node.js 中调用意图路由
 
-项目要求 Node.js 18 或更高版本。路由模块只根据输入文本识别业务分析场景，不访问数据源，也不执行分析。
+要求 **Node.js 18 或更高版本**。路由器只分析输入文本并返回场景提示，不查询数据或执行业务分析。
 
 ```js
 const { routeSkillIntent } = require("./src");
 
 const result = routeSkillIntent("最近续费率下降，帮我定位原因并给动作建议");
-console.log(result.intent); // retention_analysis
+
+console.log(result.intent);     // retention_analysis
 console.log(result.promptHint); // 优先做 cohort、续费和流失阶段拆解。
 ```
 
-也可以传入包含 `message` 字段的对象：
+也支持对象形式：
 
 ```js
-const result = routeSkillIntent({ message: "请分析注册到支付的转化漏斗" });
+const result = routeSkillIntent({
+  message: "请分析注册到支付的转化漏斗",
+});
 ```
 
-## 支持的分析场景
+## 分析能力
 
-| 场景 | 路由标识 | 常见问题 |
+| 领域 | 覆盖内容 |
+| --- | --- |
+| 经营诊断 | 指标口径、数据质量、趋势和结构拆解、驱动因素与业务影响 |
+| 增长与客户 | 增长、漏斗、留存、复购、续费、流失和 cohort 分析 |
+| 收入与效率 | 收入利润、贡献毛利、单位经济、产能与运营效率 |
+| 市场与竞争 | 市场规模、行业趋势、竞争格局、客户需求与证据评估 |
+| 报告与决策 | 商业报告、WBR/MBR/QBR、行动优先级、风险与验证指标 |
+
+### 可复用的分析模型
+
+- **差异桥接与量价拆解**：解释实际结果相对预算、目标或基准期的变化。
+- **单位经济与贡献毛利**：评估客群、产品、订单、渠道或门店的边际经济性。
+- **情景与敏感性分析**：比较假设、约束、方案结果和关键变量影响。
+- **帕累托与集中度分析**：检查贡献结构、关键依赖和组合风险。
+
+每个模型均说明适用条件、所需数据与误用边界，避免只罗列框架名称。
+
+### 尉缭子商业分析框架（现代转译）
+
+通过“**制 → 称 → 权 → 分 → 备 → 胜 → 行 → 验**”串联问题定义、资源与约束、外部比较、重点分群、行动准备、方案评估、执行和效果验证。它是现代经营分析转译，**不是《尉缭子》原书已有的商业模型**；其中“验”是补充的数据验证环节。
+
+详见[框架说明](references/wei-liaozi-business-framework.md)。
+
+## 意图路由
+
+路由器支持以下分析场景：
+
+| 场景 | 路由标识 | 示例问题 |
 | --- | --- | --- |
-| 增长分析 | `growth_analysis` | 新增、活跃或销售增长变化 |
-| 漏斗分析 | `funnel_analysis` | 注册、激活、下单或支付转化 |
-| 留存分析 | `retention_analysis` | 留存、复购、续费或流失 |
-| 收入利润分析 | `revenue_analysis` | 收入、客单价、毛利或利润结构 |
-| 运营效率分析 | `efficiency_analysis` | 人效、库存、履约或资源利用率 |
-| 经营诊断 | `business_diagnosis` | 经营波动、异常定位与复盘 |
-| 市场调研 | `market_research` | 市场规模、行业趋势或竞争格局 |
+| 增长分析 | `growth_analysis` | 新增、活跃或销售增长为何变化？ |
+| 漏斗分析 | `funnel_analysis` | 注册到激活或支付的转化在哪一步流失？ |
+| 留存分析 | `retention_analysis` | 续费率、复购或留存为什么下降？ |
+| 收入利润分析 | `revenue_analysis` | 收入、毛利或客单价由什么驱动？ |
+| 运营效率分析 | `efficiency_analysis` | 人效、库存或履约效率如何改善？ |
+| 经营诊断 | `business_diagnosis` | 经营结果偏离目标的主要原因是什么？ |
+| 市场调研 | `market_research` | 市场规模、行业趋势或竞争格局如何？ |
 
 ## 项目结构
 
 ```text
 .
-├── SKILL.md                     # 核心工作方法与分析规范
-├── src/                         # Node.js 意图路由模块
-├── test/                        # 路由测试
+├── SKILL.md
+├── src/                           # Node.js 意图路由器
+├── test/                          # 路由测试
 ├── references/
-│   ├── business-reporting.md     # 商业报告结构与交付检查
-│   ├── examples.md               # 分析案例
-│   ├── market-research.md        # 市场研究方法
-│   ├── metric-playbook.md        # 指标口径与拆解方法
-│   ├── wei-liaozi-business-framework.md # 尉缭子商业分析框架（现代转译）
-│   └── router-design.md          # 路由规则与接口说明
-├── agents/                       # Agent 元数据
-└── CHANGELOG.md                  # 版本变更记录
+│   ├── business-reporting.md      # 商业报告与交付检查
+│   ├── examples.md                # 分析案例
+│   ├── market-research.md         # 市场研究方法
+│   ├── metric-playbook.md         # 指标口径与分析模型
+│   ├── router-design.md           # 路由规则与接口说明
+│   └── wei-liaozi-business-framework.md # 端到端经营决策框架
+├── agents/                        # Agent 元数据
+├── package.json
+└── CHANGELOG.md
 ```
-
-## 边界与依赖
-
-本项目提供分析指导和基于关键词的意图识别，不连接业务数据源、不运行 SQL、不执行统计计算，也不自行进行网页搜索。分析结论依赖宿主提供的数据与计算能力；市场调研依赖宿主提供的搜索工具。路由置信度是启发式分数，不是经校准的概率。
 
 ## 本地检查
 
@@ -78,6 +117,13 @@ npm test
 npm run lint
 ```
 
-## 版本记录
+## 边界说明
 
-当前版本：**1.6.0**。详细变更见 [CHANGELOG.md](CHANGELOG.md)。
+- 不连接业务数据源，不自行运行 SQL 或统计分析。
+- 不自行执行网页搜索；市场研究需要宿主提供搜索工具。
+- 路由置信度是关键词匹配的启发式分数，不是经校准的概率。
+- 分析结论应基于可追溯数据，并区分事实、推断、假设与风险。
+
+## 版本
+
+当前版本 **1.6.0**。变更记录见 [CHANGELOG.md](CHANGELOG.md)。
