@@ -1,6 +1,6 @@
 ---
 name: business-data-analyst-skill
-version: 1.3.0
+version: 1.4.0
 description: Business data analysis and operating diagnosis skill. Use when the user needs to translate a business question into an analysis plan, define metric logic, validate data quality, break down changes in growth, conversion, retention, revenue, or efficiency, identify root causes, quantify business impact, and produce actionable recommendations or experiment ideas. Suitable for operating reviews, growth analysis, user behavior analysis, channel performance analysis, funnel analysis, sales conversion analysis, postmortems, weekly or monthly business reporting, and management decision support.
 ---
 
@@ -128,6 +128,8 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 ### 7. 搜索工具使用纪律
 
 当需要外部信息支持分析时（如行业数据、竞品信息、用户反馈），应：
+
+> 本 skill 只提供搜索策略和结果评估方法，不会自行执行网页搜索。是否能搜索取决于宿主是否提供搜索工具；若没有，应说明限制并列出需要补充的信息。
 
 1. **判断是否必要**：只有当前分析缺少关键外部事实时才启动搜索，不要每个问题都搜
 2. **关键词结构化**：从问题提取 3-5 组关键词，中英文各一组，每组包含核心概念 + 限定词

@@ -1,52 +1,79 @@
-# Business Data Analyst Skill
+# 商业数据分析师
 
-版本：`1.3.0`
+面向增长、转化、留存、收入与经营诊断场景的分析方法和轻量意图路由工具。
 
-## 简介
+本项目帮助分析者把业务问题整理成可执行的分析路径：先定义问题与指标口径，再检查数据质量、拆解变化原因，最后提出建议和验证指标。项目提供方法框架、参考资料与关键词路由；实际分析所需的数据和工具由运行环境提供。
 
-这是一个面向商业分析、经营诊断和指标拆解场景的技能包。
+## 能力概览
 
-它适合用于：
+- **结构化分析**：统一问题范围和指标定义，识别数据质量风险，拆解核心业务驱动因素。
+- **场景路由**：识别增长、漏斗、留存、收入利润、运营效率、经营诊断和市场调研等请求。
+- **专题参考**：提供指标拆解、分析案例、市场研究及路由实现说明。
+- **行动建议**：将诊断结果连接到建议、优先级和验证指标，帮助形成可跟踪的后续动作。
 
-- 将业务问题翻译成分析方案
-- 统一指标口径与分析范围
-- 检查数据质量与口径漂移
-- 拆解增长、转化、留存、收入和效率问题
-- 通过外部搜索工具进行市场调研、行业分析和竞品对标
-- 输出可执行的业务建议与验证指标
+## 快速开始
 
-## 目录结构
+### 在宿主环境中使用
 
-- [SKILL.md](/d:/home/business-data-analyst-skill/SKILL.md)
-- [CHANGELOG.md](/d:/home/business-data-analyst-skill/CHANGELOG.md)
-- [references/examples.md](/d:/home/business-data-analyst-skill/references/examples.md)
-- [references/market-research.md](/d:/home/business-data-analyst-skill/references/market-research.md)
-- [references/metric-playbook.md](/d:/home/business-data-analyst-skill/references/metric-playbook.md)
-- [references/router-design.md](/d:/home/business-data-analyst-skill/references/router-design.md)
-- [agents/openai.yaml](/d:/home/business-data-analyst-skill/agents/openai.yaml)
+阅读 [SKILL.md](SKILL.md)，并根据需要参考 `references/` 中的专题材料。宿主需要按自身能力提供业务数据、计算环境或外部搜索工具。
 
-## 当前状态
+### 在 Node.js 中调用意图路由
 
-当前仓库以文档型 skill 包为主，主要包含提示词规范、分析框架和参考材料。
+项目要求 Node.js 18 或更高版本。路由模块只根据输入文本识别业务分析场景，不访问数据源，也不执行分析。
 
-仓库现已补充技能内部意图路由和市场调研能力。实现说明和变更记录分别见：
+```js
+const { routeSkillIntent } = require("./src");
 
-- [references/router-design.md](/d:/home/business-data-analyst-skill/references/router-design.md)
-- [references/market-research.md](/d:/home/business-data-analyst-skill/references/market-research.md)
-- [CHANGELOG.md](/d:/home/business-data-analyst-skill/CHANGELOG.md)
+const result = routeSkillIntent("最近续费率下降，帮我定位原因并给动作建议");
+console.log(result.intent); // retention_analysis
+console.log(result.promptHint); // 优先做 cohort、续费和流失阶段拆解。
+```
 
-## 使用说明
+也可以传入包含 `message` 字段的对象：
 
-优先阅读 [SKILL.md](/d:/home/business-data-analyst-skill/SKILL.md)，它定义了该技能的工作原则、固定分析顺序、输出结构和参考材料。
+```js
+const result = routeSkillIntent({ message: "请分析注册到支付的转化漏斗" });
+```
 
-当需要快速补充分析案例时，查看 [references/examples.md](/d:/home/business-data-analyst-skill/references/examples.md)。
+## 支持的分析场景
 
-当需要做市场调研、行业分析或竞品对标时，查看 [references/market-research.md](/d:/home/business-data-analyst-skill/references/market-research.md)。
+| 场景 | 路由标识 | 常见问题 |
+| --- | --- | --- |
+| 增长分析 | `growth_analysis` | 新增、活跃或销售增长变化 |
+| 漏斗分析 | `funnel_analysis` | 注册、激活、下单或支付转化 |
+| 留存分析 | `retention_analysis` | 留存、复购、续费或流失 |
+| 收入利润分析 | `revenue_analysis` | 收入、客单价、毛利或利润结构 |
+| 运营效率分析 | `efficiency_analysis` | 人效、库存、履约或资源利用率 |
+| 经营诊断 | `business_diagnosis` | 经营波动、异常定位与复盘 |
+| 市场调研 | `market_research` | 市场规模、行业趋势或竞争格局 |
 
-当需要统一常见业务指标口径和拆解方法时，查看 [references/metric-playbook.md](/d:/home/business-data-analyst-skill/references/metric-playbook.md)。
+## 项目结构
 
-如果准备把 skill 接入运行时路由层，先看 [references/router-design.md](/d:/home/business-data-analyst-skill/references/router-design.md)。
+```text
+.
+├── SKILL.md                     # 核心工作方法与分析规范
+├── src/                         # Node.js 意图路由模块
+├── test/                        # 路由测试
+├── references/
+│   ├── examples.md               # 分析案例
+│   ├── market-research.md        # 市场研究方法
+│   ├── metric-playbook.md        # 指标口径与拆解方法
+│   └── router-design.md          # 路由规则与接口说明
+├── agents/                       # Agent 元数据
+└── CHANGELOG.md                  # 版本变更记录
+```
 
-## 更新说明
+## 边界与依赖
 
-项目变更历史统一记录在 [CHANGELOG.md](/d:/home/business-data-analyst-skill/CHANGELOG.md)。
+本项目提供分析指导和基于关键词的意图识别，不连接业务数据源、不运行 SQL、不执行统计计算，也不自行进行网页搜索。分析结论依赖宿主提供的数据与计算能力；市场调研依赖宿主提供的搜索工具。路由置信度是启发式分数，不是经校准的概率。
+
+## 本地检查
+
+```bash
+npm test
+npm run lint
+```
+
+## 版本记录
+
+当前版本：**1.4.0**。详细变更见 [CHANGELOG.md](CHANGELOG.md)。
