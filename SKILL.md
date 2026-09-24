@@ -1,7 +1,7 @@
 ---
 name: business-data-analyst-skill
-version: 1.4.0
-description: Business data analysis and operating diagnosis skill. Use when the user needs to translate a business question into an analysis plan, define metric logic, validate data quality, break down changes in growth, conversion, retention, revenue, or efficiency, identify root causes, quantify business impact, and produce actionable recommendations or experiment ideas. Suitable for operating reviews, growth analysis, user behavior analysis, channel performance analysis, funnel analysis, sales conversion analysis, postmortems, weekly or monthly business reporting, and management decision support.
+version: 1.5.0
+description: Business data analysis and operating diagnosis skill. Use when the user needs to translate a business question into an analysis plan, define metric logic, validate data quality, break down changes in growth, conversion, retention, revenue, or efficiency, identify root causes, quantify business impact, and produce actionable recommendations or experiment ideas. Suitable for operating reviews, growth analysis, user behavior analysis, channel performance analysis, funnel analysis, sales conversion analysis, postmortems, weekly, monthly, or quarterly business reporting, and management decision support.
 ---
 
 # 商业数据分析师
@@ -261,6 +261,8 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 
 ## 输出要求
 
+用户要求撰写商业报告、经营回顾或周/月/季度业务汇报时，读取 [references/business-reporting.md](references/business-reporting.md)。报告应先给执行摘要和关键结论，再呈现指标与基准、主要驱动、业务影响、风险和行动；根据读者与周期调整篇幅和结构，并标出数据来源、口径及不确定性。
+
 默认按以下结构回答：
 
 1. **问题定义**
@@ -316,3 +318,4 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 - 需要场景化问题清单和分析示例时，读 [references/examples.md](references/examples.md)
 - 需要常见指标与拆解思路时，读 [references/metric-playbook.md](references/metric-playbook.md)
 - 需要市场调研方法与搜索工具规范时，读 [references/market-research.md](references/market-research.md)
+- 需要商业报告结构、WBR/MBR/QBR 编排与交付检查时，读 [references/business-reporting.md](references/business-reporting.md)

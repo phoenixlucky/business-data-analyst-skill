@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-09-24
+
+### Added
+
+- Added `references/business-reporting.md` with guidance for executive summaries, KPI scorecards, driver analysis, WBR/MBR/QBR structures, action tracking, and report quality checks.
+- Integrated business reporting guidance into `SKILL.md` and added the reference to the README project overview.
+
+### Changed
+
+- Bumped the project version to `1.5.0` across `README.md`, `SKILL.md`, and `package.json`.
+
 ## [1.4.0] - 2026-09-24
 
 ### Added

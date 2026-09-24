@@ -1,7 +1,7 @@
 {
   "name": "business-data-analyst-skill",
-  "version": "1.4.0",
-  "description": "Business data analysis and operating diagnosis skill with documentation, internal intent routing, market research capability, and reusable analysis frameworks for strategy, competition, marketing, operations, and finance.",
+  "version": "1.5.0",
+  "description": "Business data analysis and operating diagnosis skill with reporting guidance, internal intent routing, market research capability, and reusable analysis frameworks.",
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
