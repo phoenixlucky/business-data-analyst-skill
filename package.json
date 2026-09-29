@@ -1,6 +1,6 @@
 {
   "name": "business-data-analyst-skill",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Business analysis skill with evidence-based reporting, market research, reusable models, and an end-to-end decision framework.",
   "main": "src/index.js",
   "exports": {

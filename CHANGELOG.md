@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0] - 2026-09-29
+
+### Added
+
+- Added practical guidance for statistical inference and uncertainty, experiment and quasi-experiment design, KPI trees and guardrails, and resource-constrained option prioritization.
+- Integrated the new methods into the main skill routing and the end-to-end business decision framework.
+
+### Changed
+
+- Updated the README capability summary and bumped the project version to `1.7.0`.
+
 ## [1.6.0] - 2026-09-24
 
 ### Added

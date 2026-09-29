@@ -1,6 +1,6 @@
 ---
 name: business-data-analyst-skill
-version: 1.6.0
+version: 1.7.0
 description: Business data analysis and operating diagnosis skill. Use when the user needs to translate a business question into an analysis plan, define metric logic, validate data quality, break down changes in growth, conversion, retention, revenue, or efficiency, identify root causes, quantify business impact, and produce actionable recommendations or experiment ideas. Suitable for operating reviews, growth analysis, user behavior analysis, channel performance analysis, funnel analysis, sales conversion analysis, postmortems, weekly, monthly, or quarterly business reporting, and management decision support.
 ---
 
@@ -217,6 +217,29 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 
 详细的适用条件、所需数据和误用边界见 [references/metric-playbook.md](references/metric-playbook.md)。
 
+### 6. 指标体系与目标管理
+
+适用于跨团队目标拆解、经营监控、北极星指标设计和指标冲突排查。
+
+基本要求：
+- 从决策目标建立指标树：结果指标连接到可干预的驱动指标，并为关键结果指标配套护栏指标。
+- 为关键指标统一定义、粒度、数据源、负责人、刷新频率、目标/基准和异常阈值；区分目标、预测与实际。
+- 检查局部指标是否可能诱发短期行为、口径套利或损害客户体验、利润、质量等长期结果。
+
+指标树设计、护栏和治理字段见 [references/metric-playbook.md](references/metric-playbook.md)。
+
+### 7. 统计推断与因果评估
+
+当结论依赖群体差异、时间变化或某项行动的效果时，先确认观测单位、样本覆盖、时间窗和比较对象，再选择描述性比较、实验或准实验方法。报告效果大小与不确定范围，并区分统计证据和业务意义；证据不足时保留为关联或假设。
+
+评估设计、常见偏差和方法选择见 [references/metric-playbook.md](references/metric-playbook.md)。
+
+### 8. 方案比较与资源优先级
+
+当多个行动争用预算、人力、产能或时间时，比较相对于“不行动/维持现状”的增量价值、投入、见效时间、约束、风险和证据置信度。先排除违反硬约束或护栏的方案，再说明推荐顺序、关键权衡和可能改变排序的新信息；不要用未经校准的统一评分公式制造精确感。
+
+方案比较和资源配置方法见 [references/metric-playbook.md](references/metric-playbook.md)。
+
 ## 尉缭子商业分析框架（现代转译）
 
 处理需要从诊断走到资源配置、执行和复盘的综合经营问题时，可用“制 → 称 → 权 → 分 → 备 → 胜 → 行 → 验”串起分析：
@@ -249,6 +272,9 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 - “目标能否达成、结果对假设有多敏感” -> 情景分析与敏感性分析
 - “业绩是否依赖少数客户、产品或渠道” -> 帕累托与集中度分析；同时核对利润贡献和风险暴露
 - “要从经营诊断走到资源配置、执行和复盘” -> 尉缭子商业分析框架；按需组合驱动树、市场比较、分群、情景分析和效果验证
+- “如何设计目标、北极星指标或跨团队指标树” -> 指标体系与目标管理
+- “差异是否可靠、某项行动是否产生增量效果” -> 统计推断与因果评估；优先采用与问题和数据条件匹配的比较设计
+- “多个项目争用资源、先做哪一个” -> 方案比较与资源优先级；以增量价值、资源约束、风险和证据为依据
 
 如果问题跨多个层级，先定主模型，再用 1 到 2 个辅助模型补充，不要把所有模型堆在一起。
 
@@ -276,6 +302,7 @@ description: Business data analysis and operating diagnosis skill. Use when the 
 - 需要场景化问题清单和分析示例时，读 [references/examples.md](references/examples.md)。
 - 需要常见指标口径、拆解方法、建议动作模板或强化分析模型时，读 [references/metric-playbook.md](references/metric-playbook.md)。
 - 需要端到端经营决策流程时，读 [references/wei-liaozi-business-framework.md](references/wei-liaozi-business-framework.md)。
+- 需要统计推断、实验/准实验评估、指标体系设计或资源优先级比较时，读 [references/metric-playbook.md](references/metric-playbook.md) 对应章节。
 - 需要市场调研方法、搜索工具规范、市场规模估算或竞品调研框架时，读 [references/market-research.md](references/market-research.md)。
 - 若用户问题偏战略/竞争/营销/财务/市场判断，优先从 `SKILL.md` 保持主线，再按需读取 `metric-playbook.md` 或 `market-research.md` 中对应章节，不要一次把所有参考材料都塞进上下文。
 

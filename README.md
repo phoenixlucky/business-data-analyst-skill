@@ -60,7 +60,7 @@ const result = routeSkillIntent({
 | 增长与客户 | 增长、漏斗、留存、复购、续费、流失和 cohort 分析 |
 | 收入与效率 | 收入利润、贡献毛利、单位经济、产能与运营效率 |
 | 市场与竞争 | 市场规模、行业趋势、竞争格局、客户需求与证据评估 |
-| 报告与决策 | 商业报告、WBR/MBR/QBR、行动优先级、风险与验证指标 |
+| 报告与决策 | 商业报告、WBR/MBR/QBR、指标体系、方案比较、行动优先级与验证指标 |
 
 ### 可复用的分析模型
 
@@ -68,6 +68,8 @@ const result = routeSkillIntent({
 - **单位经济与贡献毛利**：评估客群、产品、订单、渠道或门店的边际经济性。
 - **情景与敏感性分析**：比较假设、约束、方案结果和关键变量影响。
 - **帕累托与集中度分析**：检查贡献结构、关键依赖和组合风险。
+- **统计推断与因果评估**：报告差异的不确定性，设计实验或适用的准实验。
+- **指标树与资源优先级**：连接结果、驱动和护栏指标，按增量价值与约束比较方案。
 
 每个模型均说明适用条件、所需数据与误用边界，避免只罗列框架名称。
 
@@ -102,7 +104,7 @@ const result = routeSkillIntent({
 │   ├── business-reporting.md      # 商业报告与交付检查
 │   ├── examples.md                # 分析案例
 │   ├── market-research.md         # 市场研究方法
-│   ├── metric-playbook.md         # 指标口径与分析模型
+│   ├── metric-playbook.md         # 指标口径、推断、评估与方案比较
 │   ├── router-design.md           # 路由规则与接口说明
 │   └── wei-liaozi-business-framework.md # 端到端经营决策框架
 ├── agents/                        # Agent 元数据
@@ -126,4 +128,4 @@ npm run lint
 
 ## 版本
 
-当前版本 **1.6.0**。变更记录见 [CHANGELOG.md](CHANGELOG.md)。
+当前版本 **1.7.0**。变更记录见 [CHANGELOG.md](CHANGELOG.md)。
